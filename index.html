@@ -1,0 +1,22 @@
+<!doctype html>
+<!-- Hello PhoneGap AngularJS App 
+  -- 09-08-2013 alisa.ky.chen@gmail.com -->
+<html ng-app>
+<head>
+  <!-- script, Angular framework -->
+  <script src="js-framework/angular.min.js"></script>
+  <!-- script, model and controller -->
+  <script src="js/mobile-inspection.js"></script>
+  
+  <link rel="stylesheet" href="css/dps-inspection.css" />
+  <title>Hello PhoneGap AngularJS App</title>
+</head>
+<body>
+  <div>
+    <label>Name:</label>
+    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <hr>
+    <h1>Hello {{yourName}}!</h1>
+  </div>
+</body>
+</html>
