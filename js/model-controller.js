@@ -10,7 +10,7 @@ angular.module('btford.phonegap.ready', []).
   });
 
 phonegapReady().then(function() {
-  var app = angular.module('field-inspection-app', ['ngGrid']);
+  var app = angular.module('hello-grid-app', ['ngGrid']);
   app.controller('MyCtrl', function($scope) {
       $scope.myData = [{name: "Moroni", age: 50},
                        {name: "Tiancum", age: 43},
