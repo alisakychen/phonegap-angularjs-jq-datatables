@@ -7,7 +7,7 @@
 <name>Hello PhoneGap AngularJS App</name>
 
 <description>
-  A "hello world" PhoneGap Build application using AngularJS.
+  A PhoneGap Build application using AngularJS, jQuery, and DataTables.
   version 1.0.0
 </description>
 
