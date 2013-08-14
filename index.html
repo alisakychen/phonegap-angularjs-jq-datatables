@@ -1,7 +1,8 @@
 <!doctype html>
-<!-- Hello PhoneGap AngularJS App 
-  -- 09-08-2013 alisa.ky.chen@gmail.com -->
-<html ng-app="hello-grid-app">
+<!-- Department of Permitting Services Field Inspection App
+  --
+  -- 14-08-2013 alisa.ky.chen@gmail.com -->
+<html ng-app="fieldInspectionApp">
 <head>
   <!-- script, Cordova -->
   <!-- NOTE: cordova.js not in folder; using PhoneGap Build online -->
@@ -9,31 +10,30 @@
 
   <!-- script, jQuery -->
   <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+  <script src="js/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
 
   <!-- script, Angular framework -->
   <script src="js/angular.min.js"></script>
-  <!-- script, Angular grid -->
-  <script src="js/ng-grid-2.0.7.min.js"></script>
+  <!-- script, DataTables 1.8.2, FixedColumns 2.5.0 dev (nightly 14-08-2013) -->
+  <script src="js/jquery.dataTables-1.9.4.min.js"></script>
+  <script src="js/FixedColumns-2.5.0.dev.js"></script>
 
   <!-- script, model and controller -->
-  <script src="js/model-controller.js"></script>
+  <script src="js/promise-phonegap-ready.js"></script>
+  <script src="js/mobile-inspection-mc.js"></script>
   
-  <!-- style, Angular grid -->
-  <link rel="stylesheet" href="css/ng-grid.min.css" />
   <!-- style -->
-  <link rel="stylesheet" href="css/hello.css" />
-  <title>Hello PhoneGap AngularJS App</title>
+  <link rel="stylesheet" href="css/jquery-ui-1.8.23.custom.css" />
+  <link rel="stylesheet" href="css/dps-inspection.css" />
+  <title>DPS Field Inspections App</title>
 </head>
 <body>
-    <div>
-      <label>Name:</label>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <hr>
-      <h1>Hello {{yourName}}!</h1>
-    </div>
-    <div ng-controller="MyCtrl">
-        <div class="gridStyle" ng-grid="gridOptions">
-        </div>
+    <div ng-controller="Ctrl">
+      <table my-table="overrideOptions"
+          aa-data="inspectionsData"
+          ao-column-defs="columnDefs"
+          fixed-columns="fixedColumnOptions">
+      </table>
     </div>
 </body>
 </html>
