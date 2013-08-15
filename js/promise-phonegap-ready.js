@@ -16,7 +16,6 @@ angular.module('btford.phonegap.ready', []).
       return loadingDeferred.promise;
     };
   });
-  
 
 // NOTE: use like this
 // phonegapReady().then(function() {
