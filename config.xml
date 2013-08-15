@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.chen.alisa"
+    version   = "1.0.0">
+
+<name>Hello PhoneGap AngularJS App</name>
+
+<description>
+  A "hello world" PhoneGap Build application using AngularJS.
+	version 1.0.0
+</description>
+
+<author href="https://github.com/alisakychen/" email="alisa.ky.chen@gmail.com">
+	Alisa Chen
+</author>
+
+<preference name="phonegap-version" value="2.9.0" />
+<preference name="orientation" value="default" /> <!-- both landscape and portrait enabled -->
+
+<!--icon src="icon.png" /-->
+
+<!--gap:splash src="splash.png"-->
+
+<!-- features -->
+
+</widget>

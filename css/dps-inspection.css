@@ -1,0 +1,68 @@
+/*** AngularJS Directives ***/
+/* AngularJS Swipe */
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+/*** App, General ***/
+body {
+  margin: 0px;
+  padding: 3px;
+  background: #c0c9d9;
+  font-family: sans-serif;
+  font-size: 80%;
+}
+
+.dataTables_wrapper {
+  max-width: 1024px;
+}
+
+.dataTables_wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+tbody td {
+  padding: 1px 3px;
+}
+
+/* ? expected by jQueryUI but missing */
+.css_right  {float: right; }
+
+.odd   { background: #fefdf9; }
+.even  { background: #e8eff0; }
+
+.DTFC_LeftWrapper td{
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* temp hack */
+.DTFC_LeftWrapper {
+  width: 182px !important;
+}
+.DTFC_LeftBodyLiner {
+  width: 182px !important;  
+}
+.DTFC_LeftWrapper thead th:first-child,
+.DTFC_LeftWrapper tbody tr td:first-child {
+  width: 67px !important;
+}
+.DTFC_LeftWrapper thead th:nth-child(2),
+.DTFC_LeftWrapper tbody tr td:nth-child(2) {
+  width: 56px !important;
+}
+.DTFC_LeftWrapper thead th:nth-child(3),
+.DTFC_LeftWrapper tbody tr td:nth-child(3) {
+  width: 56px !important;
+}
