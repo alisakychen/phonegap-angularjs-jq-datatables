@@ -23,6 +23,8 @@ body {
   background: #c0c9d9;
 }
 
+.required, .red { color: #f03320; }
+
 body, table {
   font-family: sans-serif;
   font-size: 14px;
@@ -39,12 +41,12 @@ body, table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-th {
+thead tr {
   background: #c0c9d9;
 }
 tbody td,
 thead th {
-  padding: 1px 2px;
+  padding: 2px;
 }
 td {
   height: 54px;
@@ -57,10 +59,9 @@ td {
   display: inline-block;
   margin-left: 1em;
 }
-
 @media screen and (max-width: 480px) {
 td.mobile-apInfo {
-  vertical-align: text-top;
+  vertical-align: top;
 }
 td.mobile-initial {
   font-size: 18px;

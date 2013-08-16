@@ -82,34 +82,37 @@ function InspectionCtrl($scope) {
       { "sTitle": "Insp #", "aTargets":[2], "mData": "inspNum",
         "sWidth": "4.5em", "sClass": "tCenter" },
       { "sTitle": "Type", "aTargets":[3], "mData": "type",
-        "sWidth": "4.5em", "sClass": "tRight" },
+        "sWidth": "3em", "sClass": "tRight" },
       { "sTitle": "Desc", "aTargets":[4], "mData": "desc",
-        "sWidth": "10em" },
+        "sWidth": "8em" },
       { "sTitle": "#", "aTargets":[5], "mData": "count",
         "sWidth": "2em", "sClass": "tCenter" },
       { "sTitle": "Result", "aTargets":[6], "mData": "result",
         "mRender": function (data, type, oRow) {
-          if (type === "display" && data === null) {
-            return "<a ng-click=''><img src='test.jpg' /></a>";
+          if (type === "display" && (data === null || data === "")) {
+            return '<i class="icon-pencil" onClick="alert(0)"></i>';
           } // else
           return data;
         },
         "sClass": "mobile-initial tCenter" },
       { "sTitle": "Address", "aTargets":[7], "mData": "address",
-        "sWidth": "14em"}
+        "sWidth": "12em" }
     ];
 
   $scope.iDataTableOptions = {
     "bStateSave": true,
     "iCookieDuration": 2419200, /* 1 month */
-    "bJQueryUI": true,
+    "bJQueryUI": false,
     "bPaginate": false,
     "bLengthChange": false,
     "bFilter": true,
     "bInfo": true,
     "bDestroy": true,
     "sScrollX": "100%",
+    "sScrollY": "",
     "bScrollCollapse": true,
+    "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+    "sWrapper": "dataTables_wrapper form-inline"
   };
   if (document.width <= 480) {
     // combine AP Type and AP # into one column
@@ -136,9 +139,11 @@ function InspectionCtrl($scope) {
     // truncate data to first letter in result column
     $scope.iColDefs[5].mRender = function (data, type, oRow) {
       if (type === "display") {
-        if (data === null) {
-          return "<a ng-click=''><img src='test.jpg' /></a>";
-        } //else
+        if (data === null || data === "") {
+            return '<i class="icon-pencil" onClick="alert(0)"></i>';
+        } else if (data.toLowerCase() === "failed") {
+          return '<span class="red">' + data[0] + '</span>';
+        } // else
         return data[0];
       } else {
         return data;
@@ -153,6 +158,10 @@ function InspectionCtrl($scope) {
     "iLeftColumns": 2,
     "sHeightMatch": "none"
   };
+  
+  $scope.editInsp = function() {
+    alert("load editor!");
+  };
 
   // model, data
   $scope.iData = [
@@ -161,7 +170,7 @@ function InspectionCtrl($scope) {
       address: "4xxx Saul Rd, Kensington",
       comments: ""},
     { apType: "Building", apNum: "xxx016", inspNum: "xxx7050", type: 951,
-      desc: "Permit Expiration Inspection", count: 1, result: "Waived",
+      desc: "Permit Expiration Inspection", count: 1, result: "",
       address: "4xxx Cushing Dr, Kensington",
       comments: ""},
     { apType: "Electrical", apNum: "xxx425", inspNum: "xxx2875", type: 101,
