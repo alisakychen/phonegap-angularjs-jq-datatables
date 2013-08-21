@@ -1,20 +1,4 @@
 /*** AngularJS Directives ***/
-/* AngularJS Swipe */
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-}
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
-.swipe-wrap > div {
-  float:left;
-  width:100%;
-  position: relative;
-}
-
 /*** App ***/
 /* General */
 body {
@@ -29,6 +13,23 @@ body, table {
   font-family: sans-serif;
   font-size: 14px;
   line-height: 18px;
+}
+
+h1 {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .dataTables_wrapper {
